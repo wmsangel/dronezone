@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<headbtn-video>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DroneZone</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+
+    <script>
+        // Get Menu from menu.JSON
+        $.getJSON( "menu.json", function( data ) {
+            var items = [];
+            $.each( data, function( index, item ) {
+                if (item.marked) {
+                    items.push( "<li><a class='marked' href=" + item.url + " target='_blank'>" + item.name + "</a></li>" );
+                } else {
+                    items.push( "<li><a href=" + item.url + ">" + item.name + "</a></li>" );
+                }
+            });
+
+            $( "<ul/>", {
+                "class": "top-menu",
+                html: items.join( "" )
+            }).appendTo( "nav" );
+        });
+
+        $(document).ready(function(){
+            var YouTube =       $('.youtube-popup'),
+                overlay =       $('.overlay'),
+                mobileMenu =    $('.mobile-menu');
+                menuNav =       $('nav');
+
+            // open youtube
+            $('body').on('click', '.btn-video', function(){
+                YouTube.addClass('opened');
+                overlay.show();
+            })
+
+            // close youtube
+            $('body').on('click', '.overlay', function(){
+                YouTube.removeClass('opened');
+                overlay.hide();
+            })
+
+            // mobile menu
+            $('body').on('click', '.mobile-menu', function(){
+                if ($(this).hasClass('opened')) {
+                    mobileMenu.removeClass('opened')
+                    menuNav.fadeOut();
+                } else {
+                    mobileMenu.addClass('opened')
+                    menuNav.fadeIn();
+                }
+            })
+        })
+    </script>
+</headbtn-video>
+<body>
+
+<div class="wrapper">
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo"><strong>Drone</strong>Zone</a>
+        <div class="mobile-menu">
+            <div class="mobile-menu__icon"></div>
+        </div>
+        <nav></nav>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <div class="welcome">
+            <h1>Film your event with us! </h1>
+            <p>Pellentesque eget nunc sit amet urna ullamcorper fermentum et eu leo.<br>
+                Nunc vel nibh tempor, pharetra lectus congue, luctus orci.</p>
+
+            <div class="welcome__buttons">
+                <a href="javascript:void(0)" class="btn btn-white">Ask for price</a>
+                <a href="javascript:void(0)" class="btn btn-video">Watch video</a>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- YouTube -->
+<div class="youtube-popup"><iframe width="560" height="315" src="https://www.youtube.com/embed/EzQDAxXrQKE?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+<div class="overlay"></div>
+
+</body>
+</html>
