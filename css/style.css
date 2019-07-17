@@ -1,0 +1,242 @@
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("../fonts/ProximaNova-Regular.eot");
+  src: local("../fonts/Proxima Nova Regular"), local("ProximaNova-Regular"), url("../fonts/ProximaNova-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/ProximaNova-Regular.woff") format("woff"), url("../fonts/ProximaNova-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("../fonts/ProximaNova-Bold.eot");
+  src: local("../fonts/Proxima Nova Bold"), local("ProximaNova-Bold"), url("../fonts/ProximaNova-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/ProximaNova-Bold.woff") format("woff"), url("../fonts/ProximaNova-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("../fonts/ProximaNova-Light.eot");
+  src: local("../fonts/Proxima Nova Light"), local("ProximaNova-Light"), url("../fonts/ProximaNova-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/ProximaNova-Light.woff") format("woff"), url("../fonts/ProximaNova-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+body,
+html {
+  height: 100%; }
+
+body {
+  background: url("../images/background.jpg") no-repeat center;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: 'Proxima Nova'; }
+
+* {
+  box-sizing: border-box; }
+
+a {
+  color: #fff;
+  text-decoration: none;
+  opacity: 1;
+  transition: opacity .3s linear; }
+  a:hover {
+    opacity: .75;
+    transition: opacity .3s linear; }
+
+h1 {
+  font-size: 48px;
+  color: #fff;
+  margin: 0; }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 36px; } }
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 24px; } }
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+/* wrapper
+-----------------------------*/
+.wrapper {
+  max-width: 1360px;
+  margin: 0 auto; }
+  @media (max-width: 1400px) {
+    .wrapper {
+      width: 100%;
+      max-width: 100%;
+      padding-left: 20px;
+      padding-right: 20px; } }
+
+/* header
+-----------------------------*/
+header {
+  padding: 52px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative; }
+  @media (max-width: 992px) {
+    header {
+      padding: 26px 0; } }
+  header a.logo {
+    font-weight: 300;
+    font-size: 36px; }
+  @media (min-width: 993px) {
+    header nav li {
+      display: inline-block; } }
+  @media (max-width: 992px) {
+    header nav li {
+      padding-bottom: 20px; } }
+  header nav li a {
+    padding: 10px 20px; }
+    header nav li a.marked {
+      border: 1px solid rgba(255, 255, 255, 0.31);
+      border-radius: 40px; }
+  @media (max-width: 992px) {
+    header nav {
+      display: none;
+      position: absolute;
+      right: 0;
+      background: #fff;
+      top: 62px;
+      border-bottom-right-radius: 15px;
+      border-bottom-left-radius: 15px;
+      border-top-left-radius: 15px;
+      text-align: right;
+      padding: 20px 0 0 20px;
+      box-shadow: 0 5px 2px rgba(0, 0, 0, 0.31); }
+      header nav a {
+        color: #d32721; } }
+
+/* main
+-----------------------------*/
+main .welcome {
+  padding-top: 140px;
+  text-align: center; }
+  @media (max-width: 768px) {
+    main .welcome {
+      padding-top: 40px; } }
+  main .welcome p {
+    color: #ec8a32;
+    font-size: 18px;
+    line-height: 30px;
+    margin: 5px 0; }
+  main .welcome__buttons {
+    margin-top: 70px;
+    display: flex;
+    justify-content: center; }
+    @media (max-width: 480px) {
+      main .welcome__buttons {
+        flex-wrap: wrap; } }
+    @media (max-height: 500px) {
+      main .welcome__buttons {
+        margin-top: 20px; } }
+    @media (min-width: 481px) {
+      main .welcome__buttons .btn-video {
+        margin-left: 20px; } }
+
+/* Buttons
+-----------------------------*/
+.btn {
+  border-radius: 25px;
+  padding: 14px 35px;
+  border: 1px solid rgba(255, 255, 255, 0.31);
+  font-size: 18px;
+  font-weight: 300; }
+  @media (max-width: 480px) {
+    .btn {
+      margin-top: 10px;
+      margin-bottom: 10px; } }
+  .btn-white {
+    background: #fff;
+    color: #d32721;
+    padding-left: 50px;
+    padding-right: 50px; }
+  .btn-video:before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8.5px 0 8.5px 14px;
+    border-color: transparent transparent transparent #ffffff;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-right: 15px; }
+
+/* YouTube popup
+-----------------------------*/
+.youtube-popup {
+  max-width: 800px;
+  height: 400px;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  display: none;
+  z-index: 2; }
+  .youtube-popup.opened {
+    display: flex; }
+  .youtube-popup iframe {
+    width: 100%;
+    height: auto; }
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: none; }
+
+/* Mobile menu
+-----------------------------*/
+.mobile-menu {
+  background: #fff;
+  border-radius: 15px;
+  padding: 23px 15px; }
+  @media (min-width: 993px) {
+    .mobile-menu {
+      display: none; } }
+  .mobile-menu__icon {
+    width: 20px;
+    height: 3px;
+    background: #d32721;
+    position: relative;
+    transition: all .3s linear; }
+    .mobile-menu__icon:before {
+      content: '';
+      width: 20px;
+      height: 3px;
+      background: #d32721;
+      display: block;
+      position: absolute;
+      top: -8px;
+      transition: all .3s linear; }
+    .mobile-menu__icon:after {
+      content: '';
+      width: 20px;
+      height: 3px;
+      background: #d32721;
+      display: block;
+      position: absolute;
+      top: 8px;
+      transition: all .3s linear; }
+  .mobile-menu.opened .mobile-menu__icon {
+    background: #fff;
+    transition: all .3s linear; }
+    .mobile-menu.opened .mobile-menu__icon:before {
+      transform: rotate(45deg);
+      top: -3px;
+      transition: all .3s linear; }
+    .mobile-menu.opened .mobile-menu__icon:after {
+      transform: rotate(-45deg);
+      top: -3px;
+      transition: all .3s linear; }
+
+/*# sourceMappingURL=style.css.map */
